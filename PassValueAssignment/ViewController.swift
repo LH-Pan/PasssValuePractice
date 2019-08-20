@@ -38,6 +38,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.deleteButton.tag = indexPath.row
         
+        cell.removeDataClosure = { 
+            
+            self.defaultText.remove(at: indexPath.row)
+            
+            tableView.reloadData()
+            
+        }
+        
         // Target - Action
 //        cell.deleteButton.addTarget(self, action: #selector(removeCell(sender:)), for: .touchUpInside)
         
@@ -69,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //
 //        defaultText.remove(at: indexPath.row)
 //
-//        passValueTableView.deleteRows(at: [indexPath], with: .fade)
+//        passValueTableView.reloadData()
 //
 //    }
 //}

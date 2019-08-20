@@ -26,11 +26,17 @@ class PassValueTableViewCell: UITableViewCell {
         }
     }
     
-//    weak var delegate: PassValueTableViewCellDelegate?
     
-        // Delegate
-//    @IBAction func removeData(_ sender: Any) {
-//
+//    weak var delegate: PassValueTableViewCellDelegate?
+     
+    var removeDataClosure: (() -> ())!
+        
+    @IBAction func removeData(_ sender: Any) {
+        
+            // Delegate
 //        delegate?.removeData(self)
-//    }
+        
+        removeDataClosure()
+        
+    }
 }
