@@ -38,5 +38,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
+    @IBAction func addText(_ sender: Any) {
+        
+        let nextVC = NextViewController()
+        present(nextVC, animated: true, completion: nil)
+    }
 }
 

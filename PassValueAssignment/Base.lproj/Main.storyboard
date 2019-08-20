@@ -21,9 +21,22 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDd-1C-KUD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="tcZ-MP-7UE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <navigationItem id="gk1-m8-Cn6">
+                                            <barButtonItem key="rightBarButtonItem" image="Icons_24px_Add01" id="X0D-Xu-elp">
+                                                <connections>
+                                                    <action selector="addText:" destination="BYZ-38-t0r" id="ojg-Xc-oGk"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="passValue" id="qQA-MD-bCB" customClass="PassValueTableViewCell" customModule="PassValueAssignment" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qQA-MD-bCB" id="AvQ-d1-dse">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -73,4 +86,7 @@
             <point key="canvasLocation" x="-759" y="62"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icons_24px_Add01" width="24" height="24"/>
+    </resources>
 </document>
