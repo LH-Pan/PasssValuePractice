@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var passValueTableView: UITableView!
     
-    let defaultText: [String] = ["2", "3", "4", "5"]
+    var defaultText: [String] = ["2", "3", "4", "5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +32,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             else {
                 return UITableViewCell()
         }
+//        cell.delegate = self
         
         cell.passValueLabel.text = defaultText[indexPath.row]
         
+        cell.deleteButton.tag = indexPath.row
+        
+        // Target - Action
+//        cell.deleteButton.addTarget(self, action: #selector(removeCell(sender:)), for: .touchUpInside)
+        
         return cell
     }
+    
+    // Target - Action @objc func
+//    @objc func removeCell(sender: UIButton) {
+//
+//        defaultText.remove(at: sender.tag)
+//
+//        passValueTableView.reloadData()
+//    }
 
     @IBAction func addText(_ sender: Any) {
         
         let nextVC = NextViewController()
-        present(nextVC, animated: true, completion: nil)
+        
+        show(nextVC, sender: sender)
     }
 }
+
+    // Delegate
+//extension ViewController: PassValueTableViewCellDelegate {
+//
+//    func removeData(_ cell: PassValueTableViewCell) {
+//
+//        guard let indexPath = passValueTableView.indexPath(for: cell) else { return }
+//
+//        defaultText.remove(at: indexPath.row)
+//
+//        passValueTableView.deleteRows(at: [indexPath], with: .fade)
+//
+//    }
+//}
 

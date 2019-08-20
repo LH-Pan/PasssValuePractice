@@ -8,6 +8,11 @@
 
 import UIKit
 
+//protocol PassValueTableViewCellDelegate: AnyObject {
+//
+//    func removeData(_ cell: PassValueTableViewCell)
+//}
+
 class PassValueTableViewCell: UITableViewCell {
     
     @IBOutlet weak var passValueLabel: UILabel!
@@ -21,13 +26,11 @@ class PassValueTableViewCell: UITableViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
+//    weak var delegate: PassValueTableViewCellDelegate?
+    
+        // Delegate
+//    @IBAction func removeData(_ sender: Any) {
+//
+//        delegate?.removeData(self)
+//    }
 }

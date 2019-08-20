@@ -14,7 +14,6 @@
 		22ED2D11230BBE3400B43443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22ED2D10230BBE3400B43443 /* Assets.xcassets */; };
 		22ED2D14230BBE3400B43443 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22ED2D12230BBE3400B43443 /* LaunchScreen.storyboard */; };
 		22ED2D1C230BBF4800B43443 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED2D1B230BBF4800B43443 /* NextViewController.swift */; };
-		22ED2D1E230BC0D200B43443 /* PassValueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED2D1D230BC0D200B43443 /* PassValueDelegate.swift */; };
 		22ED2D21230BC4D900B43443 /* PassValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ED2D20230BC4D900B43443 /* PassValueTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		22ED2D13230BBE3400B43443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22ED2D15230BBE3400B43443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22ED2D1B230BBF4800B43443 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
-		22ED2D1D230BC0D200B43443 /* PassValueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassValueDelegate.swift; sourceTree = "<group>"; };
 		22ED2D20230BC4D900B43443 /* PassValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassValueTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,13 +60,12 @@
 		22ED2D05230BBE3300B43443 /* PassValueAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				22ED2D12230BBE3400B43443 /* LaunchScreen.storyboard */,
 				22ED2D06230BBE3300B43443 /* AppDelegate.swift */,
 				22ED2D0A230BBE3300B43443 /* Main.storyboard */,
 				22ED2D10230BBE3400B43443 /* Assets.xcassets */,
-				22ED2D12230BBE3400B43443 /* LaunchScreen.storyboard */,
 				22ED2D15230BBE3400B43443 /* Info.plist */,
 				22ED2D0D230BBE3300B43443 /* PassValueAssignment.xcdatamodeld */,
-				22ED2D1D230BC0D200B43443 /* PassValueDelegate.swift */,
 				22ED2D08230BBE3300B43443 /* ViewController.swift */,
 				22ED2D1B230BBF4800B43443 /* NextViewController.swift */,
 				22ED2D20230BC4D900B43443 /* PassValueTableViewCell.swift */,
@@ -150,7 +147,6 @@
 				22ED2D09230BBE3300B43443 /* ViewController.swift in Sources */,
 				22ED2D1C230BBF4800B43443 /* NextViewController.swift in Sources */,
 				22ED2D21230BC4D900B43443 /* PassValueTableViewCell.swift in Sources */,
-				22ED2D1E230BC0D200B43443 /* PassValueDelegate.swift in Sources */,
 				22ED2D0F230BBE3300B43443 /* PassValueAssignment.xcdatamodeld in Sources */,
 				22ED2D07230BBE3300B43443 /* AppDelegate.swift in Sources */,
 			);
