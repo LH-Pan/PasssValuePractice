@@ -8,6 +8,7 @@
 
 import UIKit
 
+    // Delegate Protocol
 //protocol PassValueTableViewCellDelegate: AnyObject {
 //
 //    func removeData(_ cell: PassValueTableViewCell)
@@ -33,9 +34,11 @@ class PassValueTableViewCell: UITableViewCell {
         
     @IBAction func removeData(_ sender: Any) {
         
-            // Delegate
+        // MARK: Delegate
 //        delegate?.removeData(self)
         
+        
+        // MARK: Closure
         removeDataClosure()
         
     }

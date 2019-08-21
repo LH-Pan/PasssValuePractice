@@ -10,18 +10,20 @@ import UIKit
 
 class NextViewController: UIViewController {
     
-    let textField: UITextField = UITextField()
+    weak var delegate: GetTextDelegate?
     
-    let button: UIButton = UIButton()
+    let myTextField: UITextField = UITextField()
+    
+    let myButton: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         
-        view.addSubview(textField)
+        view.addSubview(myTextField)
         
-        view.addSubview(button)
+        view.addSubview(myButton)
         
         setupTextField()
         
@@ -34,24 +36,24 @@ class NextViewController: UIViewController {
     
     func setupTextField() {
 
-        textField.font = UIFont.systemFont(ofSize: 16)
+        myTextField.font = UIFont.systemFont(ofSize: 16)
         
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        myTextField.borderStyle = UITextField.BorderStyle.roundedRect
         
-        textField.backgroundColor = .orange
+        myTextField.backgroundColor = .orange
         
-//        textField.delegate = self as? UITextFieldDelegate
+        
     }
     
     func setupButton() {
         
-        button.layer.cornerRadius = 20
+        myButton.layer.cornerRadius = 20
         
-        button.backgroundColor = .black
+        myButton.backgroundColor = .black
         
-        button.setTitle("Button", for: .normal)
+        myButton.setTitle("Button", for: .normal)
         
-        button.addTarget(self, action: #selector(backView), for: .touchUpInside)
+        myButton.addTarget(self, action: #selector(backView), for: .touchUpInside)
         
     }
     
@@ -66,37 +68,51 @@ class NextViewController: UIViewController {
     
     func setupConstrain() {
         
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        myTextField.translatesAutoresizingMaskIntoConstraints = false
         
-        button.translatesAutoresizingMaskIntoConstraints = false
+        myButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            textField.heightAnchor.constraint(equalToConstant: 40),
+            myTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            textField.widthAnchor.constraint(equalTo: textField.superview!.widthAnchor,
+            myTextField.widthAnchor.constraint(equalTo: myTextField.superview!.widthAnchor,
                                              multiplier: 2/3),
             
-            textField.centerXAnchor.constraint(equalTo: textField.superview!.centerXAnchor),
+            myTextField.centerXAnchor.constraint(equalTo: myTextField.superview!.centerXAnchor),
             
-            textField.topAnchor.constraint(equalTo: textField.superview!.safeAreaLayoutGuide.topAnchor,
+            myTextField.topAnchor.constraint(equalTo: myTextField.superview!.safeAreaLayoutGuide.topAnchor,
                                            constant: 100),
             
-            button.heightAnchor.constraint(equalToConstant: 40),
+            myButton.heightAnchor.constraint(equalToConstant: 40),
             
-            button.widthAnchor.constraint(equalTo: button.superview!.widthAnchor,
+            myButton.widthAnchor.constraint(equalTo: myButton.superview!.widthAnchor,
                                           multiplier: 2/3),
             
-            button.centerXAnchor.constraint(equalTo: button.superview!.centerXAnchor),
+            myButton.centerXAnchor.constraint(equalTo: myButton.superview!.centerXAnchor),
             
-            button.topAnchor.constraint(equalTo: button.superview!.centerYAnchor,
+            myButton.topAnchor.constraint(equalTo: myButton.superview!.centerYAnchor,
                                         constant: 20)
         ])
     }
     
     @objc func backView() {
         
+        guard let myText = myTextField.text else { return }
+        
+        delegate?.getText(didGet: myText)
+        
+        delegate?.addText(didEdit: myText)
+        
         self.navigationController?.popViewController(animated: true)
     }
 }
+
+protocol GetTextDelegate: AnyObject {
+    
+    func getText(didGet text: String)
+    
+    func addText(didEdit text: String)
+}
+
 
