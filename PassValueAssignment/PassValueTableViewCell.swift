@@ -27,7 +27,6 @@ class PassValueTableViewCell: UITableViewCell {
         }
     }
     
-    
 //    weak var delegate: PassValueTableViewCellDelegate?
      
     var removeDataClosure: (() -> ())!
@@ -36,10 +35,8 @@ class PassValueTableViewCell: UITableViewCell {
         
         // MARK: Delegate
 //        delegate?.removeData(self)
-        
-        
+    
         // MARK: Closure
         removeDataClosure()
-        
     }
 }

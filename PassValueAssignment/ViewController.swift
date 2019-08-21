@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         passValueTableView.dataSource = self
         
-        nextVC.delegate = self
+//        nextVC.delegate = self
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,14 +50,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.deleteButton.tag = indexPath.row
         
-        
-        
         cell.removeDataClosure = { 
             
             self.defaultText.remove(at: indexPath.row)
             
             tableView.reloadData()
-            
         }
         
         // Target - Action
@@ -80,6 +77,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         index = nil
         
+        nextVC.passTextClosure = { myText in
+            
+            self.defaultText.append(myText)
+        }
+        
         show(nextVC, sender: sender)
     }
     
@@ -88,6 +90,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         nextVC.myTextField.text = defaultText[indexPath.row]
         
         index = indexPath
+        
+        nextVC.passTextClosure = { myText in
+            
+            self.defaultText[self.index!.row] = myText
+        }
         
         show(nextVC, sender: indexPath)
     }
@@ -107,20 +114,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    }
 //}
 
-extension ViewController: GetTextDelegate {
-    
-    func getText(didGet text: String) {
-        
-        guard let index = index else { return }
-        
-        defaultText[index.row] = text
-    }
-    
-    func addText(didEdit text: String) {
-        
-        if index == nil {
-            
-            defaultText.append(text)
-        }
-    }
-}
+//extension ViewController: GetTextDelegate {
+//
+//    func getText(didGet text: String) {
+//
+//        guard let index = index else { return }
+//
+//        defaultText[index.row] = text
+//    }
+//
+//    func addText(didEdit text: String) {
+//
+//        if index == nil {
+//
+//            defaultText.append(text)
+//        }
+//    }
+//}

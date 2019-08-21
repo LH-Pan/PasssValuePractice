@@ -16,6 +16,8 @@ class NextViewController: UIViewController {
     
     let myButton: UIButton = UIButton()
     
+    var passTextClosure: ((String)->())!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +43,6 @@ class NextViewController: UIViewController {
         myTextField.borderStyle = UITextField.BorderStyle.roundedRect
         
         myTextField.backgroundColor = .orange
-        
-        
     }
     
     func setupButton() {
@@ -54,7 +54,6 @@ class NextViewController: UIViewController {
         myButton.setTitle("Button", for: .normal)
         
         myButton.addTarget(self, action: #selector(backView), for: .touchUpInside)
-        
     }
     
     func setupNavigationBar() {
@@ -103,6 +102,8 @@ class NextViewController: UIViewController {
         delegate?.getText(didGet: myText)
         
         delegate?.addText(didEdit: myText)
+        
+        passTextClosure(myText)
         
         self.navigationController?.popViewController(animated: true)
     }
